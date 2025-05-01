@@ -1,0 +1,22 @@
+<header class="bg-navy text-white p-4 flex justify-between items-center">
+  <div class="flex items-center space-x-4">
+    <div class="text-2xl font-bold cursor-pointer">IloveInvite</div>
+    <nav class="space-x-4 hidden md:block">
+      <a routerLink="/" class="hover:underline">Home</a>
+      <a routerLink="/about-us" class="hover:underline">About Us</a>
+      <a routerLink="/contact-us" class="hover:underline">Contact Us</a>
+      <a routerLink="/refund-policy" class="hover:underline">Refund Policy</a>
+      <a routerLink="/cancellation-policy" class="hover:underline">Cancellation Policy</a>
+      <a routerLink="/login" class="hover:underline">Admin</a>
+    </nav>
+  </div>
+  <div class="flex items-center space-x-4">
+    <button (click)="toggleDarkMode()" class="px-3 py-1 border rounded">Toggle Dark Mode</button>
+    <select (change)="changeTheme($event.target.value)" [value]="currentTheme" class="bg-navy text-white border rounded p-1">
+      <option value="navy">Navy Blue</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="purple">Purple</option>
+    </select>
+  </div>
+</header>
