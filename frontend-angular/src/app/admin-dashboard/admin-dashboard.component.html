@@ -1,0 +1,23 @@
+<div class="container mx-auto p-4">
+  <h2 class="text-2xl font-bold mb-4">Admin Dashboard - Sales Records</h2>
+  <table class="min-w-full border border-gray-300">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border px-4 py-2">ID</th>
+        <th class="border px-4 py-2">Email</th>
+        <th class="border px-4 py-2">Amount</th>
+        <th class="border px-4 py-2">Invitation Data</th>
+        <th class="border px-4 py-2">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sale of sales">
+        <td class="border px-4 py-2">{{ sale.id }}</td>
+        <td class="border px-4 py-2">{{ sale.email }}</td>
+        <td class="border px-4 py-2">{{ sale.amount }}</td>
+        <td class="border px-4 py-2"><pre>{{ sale.invitation_data | json }}</pre></td>
+        <td class="border px-4 py-2">{{ sale.created_at | date:'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
