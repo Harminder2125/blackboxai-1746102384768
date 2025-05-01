@@ -1,0 +1,32 @@
+<div class="container mx-auto p-4 flex flex-col md:flex-row gap-6">
+  <div class="md:w-1/2">
+    <h2 class="text-2xl font-bold mb-4">Customize Your Invitation</h2>
+    <form>
+      <label class="block mb-2 font-semibold">Name</label>
+      <input type="text" [(ngModel)]="userInput.name" name="name" class="w-full p-2 border rounded mb-4" />
+
+      <label class="block mb-2 font-semibold">Date</label>
+      <input type="date" [(ngModel)]="userInput.date" name="date" class="w-full p-2 border rounded mb-4" />
+
+      <label class="block mb-2 font-semibold">Location</label>
+      <input type="text" [(ngModel)]="userInput.location" name="location" class="w-full p-2 border rounded mb-4" />
+
+      <label class="block mb-2 font-semibold">Message</label>
+      <textarea [(ngModel)]="userInput.message" name="message" class="w-full p-2 border rounded mb-4"></textarea>
+    </form>
+  </div>
+  <div class="md:w-1/2 border rounded p-4 relative">
+    <h3 class="text-xl font-semibold mb-2">Preview (with watermark)</h3>
+    <div class="relative border p-4 bg-white">
+      <div class="opacity-20 absolute inset-0 flex items-center justify-center text-6xl font-bold text-gray-300 pointer-events-none select-none">
+        WATERMARK
+      </div>
+      <div class="relative z-10">
+        <h1 class="text-3xl font-bold mb-2">{{ userInput.name || 'Your Name' }}</h1>
+        <p class="mb-1">{{ userInput.date || 'Date' }}</p>
+        <p class="mb-1">{{ userInput.location || 'Location' }}</p>
+        <p>{{ userInput.message || 'Your message here...' }}</p>
+      </div>
+    </div>
+  </div>
+</div>
